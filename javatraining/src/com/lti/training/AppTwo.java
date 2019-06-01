@@ -31,16 +31,7 @@ public class AppTwo {
 		emp.setPassport(pport);
 		emp.setAadharcard(ac);
 		
-		System.out.println(emp.getEmpno());
-		System.out.println(emp.getName());
-		System.out.println(emp.getDateOfJoining());
-		System.out.println(emp.getAadharcard().getAadharNo());
-		System.out.println(emp.getAadharcard().getAddress());
-		System.out.println(emp.getAadharcard().getName());
-		System.out.println(emp.getPassport().getNameOfThePerson());
-		System.out.println(emp.getPassport().getPassportNo());
-		System.out.println(emp.getPassport().getIssueDate());
-		System.out.println(emp.getPassport().getExpiryDate());
+		emp.displayInfo();
 		
 	}
 }

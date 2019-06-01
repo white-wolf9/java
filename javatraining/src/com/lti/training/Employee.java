@@ -77,5 +77,19 @@ public class Employee {
 		this.aadharcard = aadharcard;
 	}
 	
+	public void displayInfo() {
+		
+		System.out.println("Employee number: "+getEmpno());
+		System.out.println("Name: "+ getName());
+		System.out.println("Date of joining: "+getDateOfJoining());
+		System.out.println("Aadhar number :"+getAadharcard().getAadharNo());
+		System.out.println("Address: "+getAadharcard().getAddress());
+		System.out.println("Name: "+getAadharcard().getName());
+		System.out.println("Name: "+getPassport().getNameOfThePerson());
+		System.out.println("Passport number: "+getPassport().getPassportNo());
+		System.out.println("Issue number of passsport: "+getPassport().getIssueDate());
+		System.out.println("Expiry date of  passport: "+getPassport().getExpiryDate());
+		
+	}
 	
 }
