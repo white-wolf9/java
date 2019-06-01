@@ -1,7 +1,10 @@
 package com.lti.training;
 
 public class Passport {
-
+		
+	
+		//This way of using getters and setters is Java Beans convention.
+	
 		private String passportNo;
 		private String issueDate;
 		private String expiryDate;
