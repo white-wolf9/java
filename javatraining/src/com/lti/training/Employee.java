@@ -7,6 +7,10 @@ public class Employee {
 	private String dateOfJoining;
 	private double salary;
 	
+	
+	//Has-a relationship, also known as association
+	//Can also be called as one-to-one association
+	
 	private Passport passport;
 	private AadharCard aadharcard;
 	

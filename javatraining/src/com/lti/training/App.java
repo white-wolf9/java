@@ -1,11 +1,11 @@
 package com.lti.training;
-import java.util.*;
+//import java.util.*;
 
 public class App {
 
 	public static void main(String[] args) {
 		
-		Scanner sc=new Scanner(System.in);
+		// Scanner sc=new Scanner(System.in);
 		
 		//This way of using getters and setters is Java Beans convention.
 		//Also known as POJO Programming Old Java Object.
