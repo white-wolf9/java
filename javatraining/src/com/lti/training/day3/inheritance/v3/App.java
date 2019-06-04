@@ -4,7 +4,7 @@ public class App {
 
 	//Testing our logger.
 	public static void main(String[] args) {
-		Logger l=LogFactory.getLoggerInstance();
+		Logger l=LogFactory.getLoggerInstance();            //Hiding(Abstraction concept) 
 		//FileLogger l=new FileLogger();
 		//ConsoleLogger cl=new ConsoleLogger();
 		/*
