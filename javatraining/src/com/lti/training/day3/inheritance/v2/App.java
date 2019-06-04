@@ -5,11 +5,12 @@ public class App {
 	//Testing our logger.
 	public static void main(String[] args) {
 		FileLogger l=new FileLogger();
+		ConsoleLogger cl=new ConsoleLogger();
 		/*
 		 * l.log("Some message!", LogLevel.INFO);       
 		 */
-		l.log("Some serious message!", LogLevel.WARN);
-		l.log("A very serious message!", LogLevel.ERROR);
-		l.log("Alright cool then!");
+		cl.log("Some serious message!", LogLevel.WARN);
+		cl.log("A very serious message!", LogLevel.ERROR);
+		cl.log("Alright cool then!");
 	}
 }

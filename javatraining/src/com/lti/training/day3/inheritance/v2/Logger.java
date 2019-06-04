@@ -1,15 +1,15 @@
 package com.lti.training.day3.inheritance.v2;
 
-import java.time.LocalDateTime;
+
 
 /**
 	 * A simple custom logger implementation.
 	 * @author Saurav Sanyal
-	 * @version 1.0
+	 * @version 2.0
 	 *
 	 */
 
-public class Logger {
+public abstract class Logger {
 	
 	public void log(String message) {
 		// Passing the control down to the other log function. 
@@ -17,21 +17,8 @@ public class Logger {
 		log(message,LogLevel.INFO);
 	}
 	
-	public void log(String message, LogLevel level) {
-		switch (level) {
-		case INFO:
-			System.out.println("[INFO] [" + LocalDateTime.now() + "] " + message);
-			break;
-		case WARN:
-			System.out.println("[WARN] [" + LocalDateTime.now() + "] " +message);
-			break;
-		case ERROR:
-			System.out.println("[ERROR] [" + LocalDateTime.now() + "] " + message);
-			break;
-		default:
-			System.out.println("[INFO] [" + LocalDateTime.now() +"] " + message);
-			break;
-		}
-	}
-
+	public abstract void log(String message, LogLevel level) ;
+	
 }
+
+
