@@ -10,7 +10,7 @@ public class Stringham {
 		String s4=new String("Java");
 		
 		System.out.println(s1==s2);
-		System.out.println(s3==s4);
+		System.out.println(s3.equals(s4));
 		
 		String s5="JAVA";
 		String s6=s1.toUpperCase();

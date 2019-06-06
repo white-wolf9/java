@@ -13,12 +13,13 @@ public class BankAccount {
 		this.balance = balance;
 	}
 	
-	public double withdraw(double amount)  throws Exception {
+	public double withdraw(double amount)  throws AccountException {
 		if(amount>balance) {
-			Exception e=new Exception("Insufficient Balance!");
+			// Error e=new Error("Insufficient Balance!");
+			AccountException e= new AccountException("Insufficient Balance!");
 			throw e;
 		}
-		
+		// Use exception instead of error.
 		else {
 			balance = amount;
 			return balance;
@@ -27,16 +28,20 @@ public class BankAccount {
 	
 	public static void main(String args[]) {
 		
-		BankAccount bankAcc=new BankAccount(1234,"Shr",5000);
+		// BankAccount bankAcc=new BankAccount(12345,"Shrey",5000);
+		BankAccount bankAcc = null;
 		try {
 			double balance = bankAcc.withdraw(6000);
 			System.out.println("Balance left : "+balance);
 		}
 		
-		catch(Exception e ) {
+		catch(AccountException e ) {
 			System.out.println(e.getMessage());
 		}
-		
+		finally {
+			System.out.println("SOME MEITOSIS IS GOING DOWN!");
+		}
+			
 	}
 }
 	
