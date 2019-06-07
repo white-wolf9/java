@@ -1,6 +1,6 @@
 package com.lti.training.day5.objectclass;
 
-public class Person /* extends object */ {
+public class Person /* extends object */ implements Cloneable { 						//Marker Interface :Interfaces without abstract methods
 
 	private String name;
 	private int age;
@@ -45,6 +45,17 @@ public class Person /* extends object */ {
 			return true;
 		return false;
 	}
+	
+	@Override
+	protected Object clone() throws CloneNotSupportedException {
+		// TODO Auto-generated method stub
+		return super.clone();
+	}
+	
+	@Override
+		protected void finalize() throws Throwable {
+				System.out.println("Finalize called..");
+		}
 	
 	/*@Override
 	public boolean equals(Object obj) {
