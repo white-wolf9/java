@@ -21,7 +21,7 @@ public class ConnectDB {
 				catch(ClassNotFoundException e) {
 					System.out.println("JDBC driver not found");
 				}
-				
+				// I just wanna Rollex
 				catch(SQLException e) {
 					e.printStackTrace();
 				}
