@@ -27,6 +27,7 @@ public class App {
 			case 1:
 				System.out.println("Enter the roll number of the student.");
 				rn = scanner.nextInt();
+				scanner.nextLine();
 				System.out.println("Enter the first name of the student.");
 				fn = scanner.nextLine();
 				System.out.println("Enter the last name of the student.");
