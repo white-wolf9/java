@@ -17,15 +17,13 @@ public class App {
 		dao.add(p);
 		*/
 		
-		List<Product> products=dao.fetchAll();
+		/*List<Product> products=dao.fetchAll();
 		for(Product p : products) {
 			System.out.println("ID = "+p.getId());
 			System.out.println("Name = "+p.getName());
 			System.out.println("Price = "+p.getPrice());
-			System.out.println("Quantity = "+p.getQuantity());
-			
-			
-		}
+			System.out.println("Quantity = "+p.getQuantity());	
+		}*/
 		
 		
 		
