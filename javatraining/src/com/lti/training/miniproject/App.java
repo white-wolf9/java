@@ -13,12 +13,14 @@ public class App {
 		stud.setResult("Pass");
 		sdao.addStudent(stud);*/
 		
-		Student x = sdao.searchStudent();
+		/*Student x = sdao.searchStudent();
 		System.out.println(x.getRollno());
 		System.out.println(x.getFname());
 		System.out.println(x.getLname());
 		System.out.println(x.getCourse());
-		System.out.println(x.getResult());
+		System.out.println(x.getResult());*/
+		
+		/*sdao.delStudent();*/
 		
 		
 	}

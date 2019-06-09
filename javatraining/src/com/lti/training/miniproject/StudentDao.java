@@ -8,6 +8,8 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.lti.training.day7.jdbc.Product;
+
 public class StudentDao {
 	
 	/*
@@ -120,4 +122,46 @@ public class StudentDao {
 			}
 		}
 	}
+	
+	public List<Student> fetchFailure() {
+		
+		Connection connection = null;											//manages the connection between the app and 
+		PreparedStatement statement = null;								//helps us to execute SQL statements
+		ResultSet resultset = null ; 													//helps us to fetch the result of a select query 
+		try {
+			Class.forName("oracle.jdbc.driver.OracleDriver");
+			String user = "hr";
+			String pass = "hr";
+			connection =DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:XE",user,pass);                                              
+			String query = "select * from TBL_PRODUCT where quantity >= ? ";
+			statement = connection.prepareStatement(query);
+			statement.setInt (1,  10);
+			resultset = statement.executeQuery();      												//For select query execute query needs to be used
+			
+			List<Student> students = new ArrayList<Student>();
+			while(resultset.next()) {
+				Student s=new Student();
+				s.setId(resultset.getInt(1));
+				s.setName(resultset.getString(2));
+				s.setPrice(resultset.getDouble(3));
+				s.setQuantity((resultset.getInt(4)));
+				students.add(s);
+			}
+			return products;
+		}
+		
+		catch(ClassNotFoundException e) {
+			System.out.println("JDBC driver not found");
+		}
+		
+		catch(SQLException e) {
+			e.printStackTrace();
+		}
+		
+		finally {
+			try { conn.close(); } catch(Exception e) { }
+		}
+		return null; // bad 
+		}
+	
 }
