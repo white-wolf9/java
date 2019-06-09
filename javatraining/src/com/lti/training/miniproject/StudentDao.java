@@ -10,12 +10,17 @@ import java.util.List;
 
 import com.lti.training.day7.jdbc.Product;
 
+/**
+ * @author Saurav Sanyal
+ * @version 1.0
+ */
+
 public class StudentDao {
 	
 	/*
 	 * Function to add a student record into the table.
 	 */
-	public void addStudent (Student student) {
+	public void addStudent (Student student, int rn, String fn, String ln, String co, String re) {
 		Connection connection = null;
 		PreparedStatement statement = null;
 		
@@ -27,11 +32,11 @@ public class StudentDao {
 			String query = "insert into tablestudent values(?,?,?,?,?)";
 			statement = connection.prepareStatement(query);
 			
-			statement.setInt(1, student.getRollno());
-			statement.setString(2, student.getFname());
-			statement.setString(3, student.getLname());
-			statement.setString(4, student.getCourse());
-			statement.setString(5, student.getResult());
+			statement.setInt(1, rn);
+			statement.setString(2, fn);
+			statement.setString(3, ln);
+			statement.setString(4, co);
+			statement.setString(5, re);
 			statement.executeUpdate();
 		}
 		catch (ClassNotFoundException e) {
@@ -50,7 +55,7 @@ public class StudentDao {
 		}
 	}
 	
-	public Student searchStudent() {
+	public Student searchStudent(int rn) {
 
 		Connection connection = null;
 		PreparedStatement statement = null;
@@ -63,7 +68,7 @@ public class StudentDao {
 			connection = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:XE",user,pass);
 			String query = "select * from tablestudent where rollno = ?";
 			statement = connection.prepareStatement(query);
-			statement.setInt(1, 2);
+			statement.setInt(1, rn);
 			resultset = statement.executeQuery();
 			resultset.next();
 			Student s = new Student();
@@ -92,7 +97,7 @@ public class StudentDao {
 		return null;
 	}
 	
-	public void delStudent() {
+	public void delStudent(int rn) {
 		Connection connection = null;
 		PreparedStatement statement = null;
 		ResultSet resultset = null;
@@ -104,7 +109,7 @@ public class StudentDao {
 			connection = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:XE",user,pass);
 			String query = "delete from tablestudent where rollno=?";
 			statement = connection.prepareStatement(query);
-			statement.setInt(1, 3);
+			statement.setInt(1, rn);
 			resultset = statement.executeQuery();
 		}
 		catch (ClassNotFoundException e) {
@@ -133,21 +138,21 @@ public class StudentDao {
 			String user = "hr";
 			String pass = "hr";
 			connection =DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:XE",user,pass);                                              
-			String query = "select * from TBL_PRODUCT where quantity >= ? ";
+			String query = "select * from tablestudent where result = 'Fail'";
 			statement = connection.prepareStatement(query);
-			statement.setInt (1,  10);
 			resultset = statement.executeQuery();      												//For select query execute query needs to be used
 			
 			List<Student> students = new ArrayList<Student>();
 			while(resultset.next()) {
 				Student s=new Student();
-				s.setId(resultset.getInt(1));
-				s.setName(resultset.getString(2));
-				s.setPrice(resultset.getDouble(3));
-				s.setQuantity((resultset.getInt(4)));
+				s.setRollno(resultset.getInt(1));
+				s.setFname(resultset.getString(2));
+				s.setLname(resultset.getString(3));
+				s.setCourse(resultset.getString(4));
+				s.setResult(resultset.getString(5));
 				students.add(s);
 			}
-			return products;
+			return students;
 		}
 		
 		catch(ClassNotFoundException e) {
@@ -159,7 +164,7 @@ public class StudentDao {
 		}
 		
 		finally {
-			try { conn.close(); } catch(Exception e) { }
+			try { connection.close(); } catch(Exception e) { }
 		}
 		return null; // bad 
 		}
