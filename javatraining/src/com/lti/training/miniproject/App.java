@@ -10,18 +10,18 @@ public class App {
 		
 		Scanner scanner = new Scanner(System.in);
 		
-		System.out.println("Welcome to the student interface.");
+		System.out.println("<!--------------->Welcome to the student interface.<---------------!>");
 		System.out.println("Operations Performed");
 		System.out.println("1. Add a record of a student.");
 		System.out.println("2. Search the record of a student.");
 		System.out.println("3. Delete the record of a student.");
 		System.out.println("4. Show the names of all the student.");
 
-		int choicecontinue =0;
+		char choicecontinue;
 		do {
 			int rn;
 			String fn,ln,co,re;
-			System.out.println("Enter your choice :");
+			System.out.println("Enter your choice of operation:");
 			int choice = scanner.nextInt();
 			switch (choice) {
 			case 1:
@@ -51,11 +51,13 @@ public class App {
 				Student x = sdao.searchStudent(rn);
 				System.out.println(x);
 				break;
+				
 			case 3:
 				System.out.println("Enter the roll number of the student whose record is to be deleted.");
 				rn = scanner.nextInt();
 				sdao.delStudent(rn);
 				break;
+				
 			case 4:
 				System.out.println("The information of the students who failed are listed below.");
 				List<Student> students=sdao.fetchFailure();
@@ -63,11 +65,13 @@ public class App {
 					System.out.println(s);
 				}
 				break;
+			case 0:
+				break;
 			default:
 				System.out.println("Wrong Choice");
 				break;
 			}
-			System.out.println("Press 1 to continue, and 0 to exit the application.");
-		} while ((choicecontinue = scanner.nextInt())==1);
+			System.out.println("Press 'Y' to continue, and 'N' to exit the application.");
+		} while ((choicecontinue = scanner.next().charAt(0)) == 'Y');
 	}
 }

@@ -8,8 +8,6 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.lti.training.day7.jdbc.Product;
-
 /**
  * @author Saurav Sanyal
  * @version 1.0
@@ -26,8 +24,8 @@ public class StudentDao {
 		
 		try {
 			Class.forName("oracle.jdbc.driver.OracleDriver");
-			String user = "system";
-			String pass = "admin";
+			String user = "hr";
+			String pass = "hr";
 			connection = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:XE",user,pass);
 			String query = "insert into tablestudent values(?,?,?,?,?)";
 			statement = connection.prepareStatement(query);
@@ -64,8 +62,8 @@ public class StudentDao {
 		
 		try {
 			Class.forName("oracle.jdbc.driver.OracleDriver");
-			String user = "system";
-			String pass = "admin";
+			String user = "hr";
+			String pass = "hr";
 			connection = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:XE",user,pass);
 			String query = "select * from tablestudent where rollno = ?";
 			statement = connection.prepareStatement(query);
@@ -105,8 +103,8 @@ public class StudentDao {
 		
 		try {
 			Class.forName("oracle.jdbc.driver.OracleDriver");
-			String user = "system";
-			String pass = "admin";
+			String user = "hr";
+			String pass = "hr";
 			connection = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:XE",user,pass);
 			String query = "delete from tablestudent where rollno=?";
 			statement = connection.prepareStatement(query);
@@ -137,8 +135,8 @@ public class StudentDao {
 		ResultSet resultset = null ;
 		try {
 			Class.forName("oracle.jdbc.driver.OracleDriver");
-			String user = "system";
-			String pass = "admin";
+			String user = "hr";
+			String pass = "hr";
 			connection =DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:XE",user,pass);                                              
 			String query = "select * from tablestudent where result = 'Fail'";
 			statement = connection.prepareStatement(query);
