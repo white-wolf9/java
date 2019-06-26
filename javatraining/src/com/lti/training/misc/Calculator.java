@@ -1,4 +1,4 @@
-package com.lti.training;
+package com.lti.training.misc;
 
 public class Calculator {
 	
@@ -13,6 +13,11 @@ public class Calculator {
 	}
 
 	public static void main(String[] args) {
+		
+		/*
+		 * String manipulation functions
+		 */
+		
 		String a="Shreyansh";
 		System.out.println(a.toUpperCase());
 		System.out.println(a.charAt(2)); 
@@ -21,6 +26,13 @@ public class Calculator {
 		cal.add(5,4);
 		cal.sub(6,2);
 		Calculator.mul(10,20);
+		
+		/*
+		 * Functions to convert the the format of number from decimal to
+		 * (1) Binary
+		 * (2) Octal
+		 * (3) Hexadecimal
+		 */
 		
 		System.out.println(Integer.toBinaryString(84));
 		System.out.println(Integer.toOctalString(123));

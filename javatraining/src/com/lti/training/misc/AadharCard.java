@@ -1,4 +1,4 @@
-package com.lti.training;
+package com.lti.training.misc;
 
 public class AadharCard {
 		

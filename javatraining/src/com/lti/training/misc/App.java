@@ -1,4 +1,4 @@
-package com.lti.training;
+package com.lti.training.misc;
 //import java.util.*;
 
 public class App {
