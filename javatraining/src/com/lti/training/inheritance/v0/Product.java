@@ -1,4 +1,4 @@
-package com.lti.inheritance;
+package com.lti.training.inheritance.v0;
 
                                                                      //This program is an example of runtime polymorphism
 public abstract class Product {

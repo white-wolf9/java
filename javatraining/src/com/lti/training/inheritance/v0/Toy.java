@@ -1,4 +1,4 @@
-package com.lti.inheritance;
+package com.lti.training.inheritance.v0;
 
 public class Toy  extends Product{
 	

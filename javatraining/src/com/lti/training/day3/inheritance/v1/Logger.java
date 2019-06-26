@@ -12,8 +12,7 @@ import java.time.LocalDateTime;
 public class Logger {
 	
 	public void log(String message) {
-		// Passing the control down to the other log function. 
-		// System.out.println("[INFO] [" + LocalDateTime.now() +"] " + message);
+		
 		log(message,LogLevel.INFO);
 	}
 	
