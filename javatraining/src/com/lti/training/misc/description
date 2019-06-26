@@ -1,1 +1,11 @@
+Class Address contains three variables to store the Address related data. It includes getters and setters.
+Class Customer has two variables along with a Address type varaibles along with a getters and setters for its fields.
+Class AddressCustomerApp uses Classes Address and Customer. The object of Address and Customer are created and values are assigned using getters.
 
+
+App imports classes (1) Passport (2) Student and (3) AadharCard
+It includes the implementation of getter setters, to initialize a class with parameterized constructors, and by using getter and setters.
+
+Class Employee has four variables and has Passport and AadharCard as vriables. This class has getters and setters along with parameterized constructors. 
+Class Passport has four variable and getters and setters. Class AadharCard contains three variables to store AadharCard related data with the help of getters and setters.
+Class AppTwo uses Class Employee, Passport and AadharCard. The object of Employee, AadharCard, Passport is created and the values are set using setters. Then we use the setPassport() and setAadharcard() to assign those created objects to the Employee object. This is known as one to one relationship.
