@@ -73,5 +73,8 @@ public class App {
 			}
 			System.out.println("Press 'Y' to continue, and 'N' to exit the application.");
 		} while ((choicecontinue = scanner.next().charAt(0)) == 'Y');
+		/*
+		 * Well no shit.
+		 */
 	}
 }
